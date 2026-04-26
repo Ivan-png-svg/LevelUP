@@ -3,10 +3,11 @@
 Проект з переїзду сайту з Tilda на власний стек (Next.js + Supabase).
 
 ## 👥 Команда
-- **Design:** @username_дизайнера
-- **Frontend:** @username_фронтенда
-- **DB/Backend:** @username_бд
-- **DevOps:** @Ivan-png-svg
+- **Design:** Приходбко В'ячеслав
+- **Frontend:** Крушельницький Ігор
+- **DB/Backend:** Матіїшин Денис
+- **DevOps:** Андрус Володимир
+- **Tester:** Нестер Андрій
 
 ## 🛠 Технологічний стек
 - **Frontend:** Next.js (Vercel)
