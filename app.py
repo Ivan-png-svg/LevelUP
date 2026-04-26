@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_migrate import Migrate
 
 from config import Config
 from database import db
@@ -6,6 +7,7 @@ from controllers.reviews_controller.reviews_controller import reviews_bp
 from controllers.services_controller.services_controller import service_bp
 from ma import ma
 
+migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
@@ -13,6 +15,7 @@ def create_app():
 
     db.init_app(app)
     ma.init_app(app)
+    migrate.init_app(app, db)
 
     app.register_blueprint(reviews_bp, url_prefix='/api/v1/reviews')
     app.register_blueprint(service_bp, url_prefix='/api/v1/services')
