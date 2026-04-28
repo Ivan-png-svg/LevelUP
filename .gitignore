@@ -1,0 +1,5 @@
+# Claude-specific
+.claude/
+CLAUDE.md
+ATTRIBUTIONS.md
+Guidelines.md
