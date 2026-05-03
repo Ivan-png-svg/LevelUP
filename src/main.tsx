@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app/App";
 
-// Підключаємо стилі з твоєї структури
 import "./styles/fonts.css";
 import "./styles/index.css";
 import "./styles/theme.css";

@@ -1,5 +1,5 @@
-import { Link } from 'react-router';
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from "react-router";
+import { Heart, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -20,7 +20,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Психологічні консультації та тренінги для особистісного зростання. 
+              Психологічні консультації та тренінги для особистісного зростання.
               Допомагаємо людям досягати нових висот.
             </p>
           </div>
@@ -128,13 +128,19 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-white/70">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+380981234567" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+380981234567"
+                  className="hover:text-white transition-colors"
+                >
                   +380 (98) 123 45 67
                 </a>
               </li>
               <li className="flex items-center gap-2 text-white/70">
                 <Mail className="w-4 h-4 text-secondary" />
-                <a href="mailto:levelup@gmail.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:levelup@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
                   levelup@gmail.com
                 </a>
               </li>
@@ -148,9 +154,11 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-            <div>© 2026 LEVEL UP. Всі права захищені.</div>
+            <div>© 2026 LEVEL UP. Усі права захищені.</div>
             <div className="flex items-center gap-1.5">
-              Створено з <Heart className="w-4 h-4 text-secondary fill-current" /> для вашого розвитку
+              Створено з{" "}
+              <Heart className="w-4 h-4 text-secondary fill-current" /> для
+              вашого розвитку
             </div>
           </div>
         </div>
