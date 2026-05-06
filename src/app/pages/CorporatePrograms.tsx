@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { motion } from "motion/react";
+import { Link } from "react-router";
 import {
   Briefcase,
   Users,
@@ -9,100 +9,100 @@ import {
   Calendar,
   CheckCircle2,
   Building2,
-} from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+} from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function CorporatePrograms() {
   const services = [
     {
       icon: Users,
-      title: 'Тімбілдінг',
+      title: "Тімбілдінг",
       description:
-        'Створення згуртованої команди через спільні активності, вправи на довіру та комунікацію. Покращення взаємодії між співробітниками.',
+        "Створення згуртованої команди через спільні активності, вправи на довіру та комунікацію. Покращення взаємодії між співробітниками.",
     },
     {
       icon: TrendingUp,
-      title: 'Розвиток лідерства',
+      title: "Розвиток лідерства",
       description:
-        'Програми для керівників та менеджерів. Розвиток навичок управління, мотивації команди, прийняття рішень та делегування.',
+        "Програми для керівників та менеджерів. Розвиток навичок управління, мотивації команди, прийняття рішень та делегування.",
     },
     {
       icon: Target,
-      title: 'Профілактика вигорання',
+      title: "Профілактика вигорання",
       description:
-        'Навчання техніків управління стресом, балансу роботи та життя. Створення здорової робочої атмосфери.',
+        "Навчання техніків управління стресом, балансу роботи та життя. Створення здорової робочої атмосфери.",
     },
     {
       icon: Building2,
-      title: 'Організаційна культура',
+      title: "Організаційна культура",
       description:
-        'Розробка та впровадження цінностей компанії, покращення внутрішньої комунікації, вирішення конфліктів.',
+        "Розробка та впровадження цінностей компанії, покращення внутрішньої комунікації, вирішення конфліктів.",
     },
   ];
 
   const programs = [
     {
-      title: 'Базовий пакет',
-      duration: '1 день',
-      description: 'Ідеально для невеликих команд',
+      title: "Базовий пакет",
+      duration: "1 день",
+      description: "Ідеально для невеликих команд",
       features: [
-        'Тімбілдінг активності (4 години)',
-        'Діагностика командної динаміки',
-        'Презентація результатів',
-        'Рекомендації для розвитку',
+        "Тімбілдінг активності (4 години)",
+        "Діагностика командної динаміки",
+        "Презентація результатів",
+        "Рекомендації для розвитку",
       ],
-      participants: 'До 20 учасників',
+      participants: "До 20 учасників",
     },
     {
-      title: 'Стандартний пакет',
-      duration: '2-3 дні',
-      description: 'Комплексний підхід до розвитку',
+      title: "Стандартний пакет",
+      duration: "2-3 дні",
+      description: "Комплексний підхід до розвитку",
       features: [
-        'Діагностика та аналіз команди',
-        'Тренінги з обраних тем',
-        'Практичні воркшопи',
-        'Індивідуальні сесії для лідерів',
-        'Звіт з рекомендаціями',
+        "Діагностика та аналіз команди",
+        "Тренінги з обраних тем",
+        "Практичні воркшопи",
+        "Індивідуальні сесії для лідерів",
+        "Звіт з рекомендаціями",
       ],
-      participants: 'До 40 учасників',
+      participants: "До 40 учасників",
       popular: true,
     },
     {
-      title: 'Преміум пакет',
-      duration: 'Індивідуально',
-      description: 'Довгострокове партнерство',
+      title: "Преміум пакет",
+      duration: "Індивідуально",
+      description: "Довгострокове партнерство",
       features: [
-        'Комплексна діагностика організації',
-        'Програма на замовлення',
-        'Регулярні тренінги протягом року',
-        'Супровід змін',
-        'Коучинг для керівництва',
-        'Квартальні звіти та коригування',
+        "Комплексна діагностика організації",
+        "Програма на замовлення",
+        "Регулярні тренінги протягом року",
+        "Супровід змін",
+        "Коучинг для керівництва",
+        "Квартальні звіти та коригування",
       ],
-      participants: 'Будь-яка кількість',
+      participants: "Будь-яка кількість",
     },
   ];
 
   const benefits = [
-    'Покращення командної роботи та комунікації',
-    'Підвищення мотивації та залученості співробітників',
-    'Зниження плинності кадрів',
-    'Розвиток лідерських навичок',
-    'Профілактика професійного вигорання',
-    'Ефективне вирішення конфліктів',
-    'Позитивна організаційна культура',
-    'Підвищення продуктивності',
+    "Покращення командної роботи та комунікації",
+    "Підвищення мотивації та залученості співробітників",
+    "Зниження плинності кадрів",
+    "Розвиток лідерських навичок",
+    "Профілактика професійного вигорання",
+    "Ефективне вирішення конфліктів",
+    "Позитивна організаційна культура",
+    "Підвищення продуктивності",
   ];
 
   const industries = [
-    'IT та технології',
-    'Фінанси та банківництво',
-    'Роздрібна торгівля',
-    'Виробництво',
-    'Медицина та охорона здоров\'я',
-    'Освіта',
-    'Маркетинг та реклама',
-    'Готельний та ресторанний бізнес',
+    "IT та технології",
+    "Фінанси та банківництво",
+    "Роздрібна торгівля",
+    "Виробництво",
+    "Медицина та охорона здоров'я",
+    "Освіта",
+    "Маркетинг та реклама",
+    "Готельний та ресторанний бізнес",
   ];
 
   return (
@@ -120,13 +120,11 @@ export default function CorporatePrograms() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
                 <Briefcase className="w-4 h-4 text-accent" />
-                <span className="text-sm text-foreground/80">
-                  Для бізнесу
-                </span>
+                <span className="text-sm text-foreground/80">Для бізнесу</span>
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-                Корпоративні{' '}
+                Корпоративні{" "}
                 <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   програми
                 </span>
@@ -168,7 +166,7 @@ export default function CorporatePrograms() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1758518729263-e26fb50db6bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB0ZWFtJTIwbWVldGluZyUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFscyUyMGdyb3VwJTIwb2ZmaWNlfGVufDF8fHx8MTc3NDUyMTY1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Corporate programs"
                   className="w-full h-[500px] object-cover"
                 />
@@ -246,7 +244,7 @@ export default function CorporatePrograms() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 ${
-                  program.popular ? 'border-primary' : 'border-border'
+                  program.popular ? "border-primary" : "border-border"
                 } relative flex flex-col`}
               >
                 {program.popular && (
@@ -289,8 +287,8 @@ export default function CorporatePrograms() {
                     to="/contact"
                     className={`block w-full px-6 py-3 rounded-xl text-center font-medium transition-all ${
                       program.popular
-                        ? 'bg-gradient-to-br from-primary to-cyan-400 text-white shadow-lg hover:shadow-xl'
-                        : 'border-2 border-primary text-primary hover:bg-primary/5'
+                        ? "bg-gradient-to-br from-primary to-cyan-400 text-white shadow-lg hover:shadow-xl"
+                        : "border-2 border-primary text-primary hover:bg-primary/5"
                     }`}
                   >
                     Замовити консультацію

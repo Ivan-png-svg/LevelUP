@@ -165,7 +165,7 @@ export default function IndividualConsultations() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1593444286621-98245b7d4530?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwc3ljaG9sb2d5JTIwdGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzE4NzIwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1714974528703-e5ad41abc259?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Individual consultation"
                   className="w-full h-[500px] object-cover"
                 />

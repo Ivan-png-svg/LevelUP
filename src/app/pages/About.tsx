@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Link } from "react-router";
 import {
   Heart,
   Users,
@@ -12,45 +12,45 @@ import {
   Shield,
   ArrowRight,
   FileText,
-} from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+} from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function About() {
   const stats = [
-    { icon: Users, value: '500+', label: 'Задоволених клієнтів' },
-    { icon: Clock, value: '10+', label: 'Років досвіду' },
-    { icon: Award, value: '50+', label: 'Успішних програм' },
-    { icon: Heart, value: '98%', label: 'Позитивних відгуків' },
+    { icon: Users, value: "500+", label: "Задоволених клієнтів" },
+    { icon: Clock, value: "10+", label: "Років досвіду" },
+    { icon: Award, value: "50+", label: "Успішних програм" },
+    { icon: Heart, value: "98%", label: "Позитивних відгуків" },
   ];
 
   const whyChooseUs = [
     {
       icon: Award,
-      title: 'Досвідчені фахівці',
+      title: "Досвідчені фахівці",
       description:
-        'Ми співпрацюємо з психологами, психотерапевтами, психіатрами та коучами з практичним досвідом роботи від 5 років.',
-      gradient: 'from-primary to-cyan-400',
+        "Ми співпрацюємо з психологами, психотерапевтами, психіатрами та коучами з практичним досвідом роботи від 5 років.",
+      gradient: "from-primary to-cyan-400",
     },
     {
       icon: Heart,
-      title: 'Індивідуальний підхід',
+      title: "Індивідуальний підхід",
       description:
-        'Кожна людина унікальна, тому ми підбираємо формат роботи та методи підтримки ідповідно до ваших потреб і запиту.',
-      gradient: 'from-secondary to-emerald-400',
+        "Кожна людина унікальна, тому ми підбираємо формат роботи та методи підтримки ідповідно до ваших потреб і запиту.",
+      gradient: "from-secondary to-emerald-400",
     },
     {
       icon: Lightbulb,
-      title: 'Сучасні методи роботи',
+      title: "Сучасні методи роботи",
       description:
-        'Наші спеціалісти використовують перевірені та сучасні підходи психологічної допомоги і постійно підвищують свою професійну кваліфікацію.',
-      gradient: 'from-accent to-yellow-400',
+        "Наші спеціалісти використовують перевірені та сучасні підходи психологічної допомоги і постійно підвищують свою професійну кваліфікацію.",
+      gradient: "from-accent to-yellow-400",
     },
     {
       icon: Shield,
-      title: 'Безпечний і довірливий простір',
+      title: "Безпечний і довірливий простір",
       description:
-        'Ми створюємо атмосферу підтримки, конфіденційності та поваги, де ви можете відкрито говорити про важливе.',
-      gradient: 'from-primary to-secondary',
+        "Ми створюємо атмосферу підтримки, конфіденційності та поваги, де ви можете відкрито говорити про важливе.",
+      gradient: "from-primary to-secondary",
     },
   ];
 
@@ -69,22 +69,35 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-                Про{' '}
+                Про{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   LEVEL UP
                 </span>
               </h1>
               <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
-                Наш консультаційно-тренінговий центр — це простір професійної підтримки, розвитку та внутрішніх змін. Ми створили середовище, у якому кожна людина може отримати якісну психологічну допомогу, знайти відповіді на важливі життєві питання та відкрити нові ресурси для особистісного зростання.
+                Наш консультаційно-тренінговий центр — це простір професійної
+                підтримки, розвитку та внутрішніх змін. Ми створили середовище,
+                у якому кожна людина може отримати якісну психологічну допомогу,
+                знайти відповіді на важливі життєві питання та відкрити нові
+                ресурси для особистісного зростання.
               </p>
               <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
-                Ми співпрацюємо з командою висококваліфікованих фахівців — психологів, психотерапевтів, психіатрів та коучів, які мають щонайменше 5 років практичного досвіду. Наші спеціалісти поєднують глибокі професійні знання, сучасні методи роботи та індивідуальний підхід до кожної людини.
+                Ми співпрацюємо з командою висококваліфікованих фахівців —
+                психологів, психотерапевтів, психіатрів та коучів, які мають
+                щонайменше 5 років практичного досвіду. Наші спеціалісти
+                поєднують глибокі професійні знання, сучасні методи роботи та
+                індивідуальний підхід до кожної людини.
               </p>
               <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
-                У центрі проводяться індивідуальні консультації, групові зустрічі, тренінги та освітні програми, спрямовані на психологічне благополуччя, розвиток емоційної стійкості, покращення якості життя та розкриття особистісного потенціалу.
+                У центрі проводяться індивідуальні консультації, групові
+                зустрічі, тренінги та освітні програми, спрямовані на
+                психологічне благополуччя, розвиток емоційної стійкості,
+                покращення якості життя та розкриття особистісного потенціалу.
               </p>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                Ми віримо, що кожна людина має внутрішні ресурси для змін. Наша місія — допомогти їх побачити, зміцнити та використати для створення гармонійного й усвідомленого житт��.
+                Ми віримо, що кожна людина має внутрішні ресурси для змін. Наша
+                місія — допомогти їх побачити, зміцнити та використати для
+                створення гармонійного й усвідомленого життя.
               </p>
             </motion.div>
 
@@ -96,7 +109,7 @@ export default function About() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1593444286621-98245b7d4530?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwc3ljaG9sb2d5JTIwdGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzE4NzIwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Professional consultation"
                   className="w-full h-[500px] object-cover"
                 />
@@ -144,7 +157,8 @@ export default function About() {
               Чому обирають нас
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Наші переваги, які роблять нас надійним партнером на шляху до особистісного зростання
+              Наші переваги, які роблять нас надійним партнером на шляху до
+              особистісного зростання
             </p>
           </motion.div>
 
@@ -188,7 +202,8 @@ export default function About() {
               Наш фахівець
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Досвідчений психолог, який допомагає вам на шляху до особистісного зростання
+              Досвідчений психолог, який допомагає вам на шляху до особистісного
+              зростання
             </p>
           </motion.div>
 
@@ -203,8 +218,12 @@ export default function About() {
                 {/* Profile Image Section */}
                 <div className="lg:col-span-2 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-12">
                   <div className="text-center">
-                    <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-2xl mb-6">
-                      <Users className="w-24 h-24 text-white" />
+                    <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl mb-6 ring-4 ring-primary/20">
+                      <img
+                        src="https://staff.lpnu.ua/sites/default/files/staff/73755.jpg"
+                        alt="Тетяна Колодчак"
+                        className="w-full h-full object-cover object-[center_5%]"
+                      />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold text-foreground">
@@ -228,7 +247,8 @@ export default function About() {
                         Спеціалізація
                       </h4>
                       <p className="text-foreground/70 leading-relaxed">
-                        Сімейна психологія, консультування дорослих та дітей, робота з кризовими станами та особистісним зростанням
+                        Сімейна психологія, консультування дорослих та дітей,
+                        робота з кризовими станами та особистісним зростанням
                       </p>
                     </div>
 

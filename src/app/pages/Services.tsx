@@ -1,64 +1,67 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router';
-import { User, Users, Briefcase, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { motion } from "motion/react";
+import { Link } from "react-router";
+import { User, Users, Briefcase, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export default function Services() {
   const services = [
     {
       icon: User,
-      title: 'Індивідуальні консультації',
+      title: "Індивідуальні консультації",
       description:
-        'Персональна психологічна підтримка в комфортній атмосфері. Робота над особистими питаннями, подолання кризових ситуацій, розвиток особистості.',
+        "Персональна психологічна підтримка в комфортній атмосфері. Робота над особистими питаннями, подолання кризових ситуацій, розвиток особистості.",
       features: [
-        'Конфіденційність',
-        'Індивідуальний підхід',
-        'Гнучкий графік',
-        'Онлайн та офлайн формат',
+        "Конфіденційність",
+        "Індивідуальний підхід",
+        "Гнучкий графік",
+        "Онлайн та офлайн формат",
       ],
-      path: '/services/individual',
-      gradient: 'from-primary to-cyan-400',
-      image: 'https://images.unsplash.com/photo-1593444286621-98245b7d4530?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwc3ljaG9sb2d5JTIwdGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzE4NzIwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      path: "/services/individual",
+      gradient: "from-primary to-cyan-400",
+      image:
+        "https://images.unsplash.com/photo-1714974528703-e5ad41abc259?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       icon: Users,
-      title: 'Групові тренінги',
+      title: "Групові тренінги",
       description:
-        'Інтерактивні заняття в невеликих групах. Розвиток навичок спілкування, впевненості в собі, управління емоціями та стресом.',
+        "Інтерактивні заняття в невеликих групах. Розвиток навичок спілкування, впевненості в собі, управління емоціями та стресом.",
       features: [
-        'Невелика група (до 12 осіб)',
-        'Інтерактивні вправи',
-        'Обмін досвідом',
-        'Практичні навички',
+        "Невелика група (до 12 осіб)",
+        "Інтерактивні вправи",
+        "Обмін досвідом",
+        "Практичні навички",
       ],
-      path: '/services/group',
-      gradient: 'from-primary to-cyan-400',
-      image: 'https://images.unsplash.com/photo-1761250246894-ee2314939662?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW1pbmFyJTIwdHJhaW5pbmclMjBtZWV0aW5nJTIwZGlzY3Vzc2lvbnxlbnwxfHx8fDE3NzIzOTgwODJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      path: "/services/group",
+      gradient: "from-primary to-cyan-400",
+      image:
+        "https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       icon: Briefcase,
-      title: 'Корпоративні програми',
+      title: "Корпоративні програми",
       description:
-        'Комплексні програми для бізнесу та організацій. Покращення командної роботи, підвищення продуктивності, профілактика вигорання.',
+        "Комплексні програми для бізнесу та організацій. Покращення командної роботи, підвищення продуктивності, профілактика вигорання.",
       features: [
-        'Програми під запит',
-        'Виїзні тренінги',
-        'Командоутворення',
-        'Аналіз результатів',
+        "Програми під запит",
+        "Виїзні тренінги",
+        "Командоутворення",
+        "Аналіз результатів",
       ],
-      path: '/services/corporate',
-      gradient: 'from-primary to-cyan-400',
-      image: 'https://images.unsplash.com/photo-1635545999375-057ee4013deb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwbWluZGZ1bG5lc3MlMjB3ZWxsbmVzcyUyMHJlbGF4YXRpb258ZW58MXx8fHwxNzcxODcyMDM3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      path: "/services/corporate",
+      gradient: "from-primary to-cyan-400",
+      image:
+        "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
   const benefits = [
-    'Досвідчені психологи з вищою освітою та сертифікатами',
-    'Сучасні методики та індивідуальний підхід',
-    'Комфортне приміщення в центрі міста',
-    'Гнучкий графік роботи, включно з вихідними',
-    'Можливість онлайн консультацій',
-    'Повна конфіденційність та анонімність',
+    "Досвідчені психологи з вищою освітою та сертифікатами",
+    "Сучасні методики та індивідуальний підхід",
+    "Комфортне приміщення в центрі міста",
+    "Гнучкий графік роботи, включно з вихідними",
+    "Можливість онлайн консультацій",
+    "Повна конфіденційність та анонімність",
   ];
 
   return (
@@ -76,16 +79,16 @@ export default function Services() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Наші{' '}
+              Наші{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 послуги
               </span>
             </h1>
             <p className="text-lg lg:text-xl text-foreground/70 leading-relaxed">
               Ми пропонуємо широкий спектр психологічних послуг для різних
-              потреб. Від індивідуальних консультацій до корпоративних програм
-              - ми допоможемо вам знайти оптимальне рішення для особистісного
-              та професійного зростання.
+              потреб. Від індивідуальних консультацій до корпоративних програм -
+              ми допоможемо вам знайти оптимальне рішення для особистісного та
+              професійного зростання.
             </p>
           </motion.div>
         </div>
@@ -103,10 +106,10 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <div
                     className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6`}
                   >
@@ -139,7 +142,7 @@ export default function Services() {
                   </Link>
                 </div>
 
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                     <ImageWithFallback
                       src={service.image}
