@@ -20,6 +20,8 @@ export function AIChatBot() {
     },
   ]);
   const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
 
   const quickReplies = [
     'Які послуги ви надаєте?',
@@ -28,94 +30,40 @@ export function AIChatBot() {
     'Графік роботи',
   ];
 
-  const getBotResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase();
+  const handleSendMessage = async (text?: string) => {
+    const messageText = typeof text === 'string' ? text : inputValue;
+    if (!messageText.trim() || isLoading) return;
 
-    if (
-      lowerMessage.includes('послуг') ||
-      lowerMessage.includes('що ви') ||
-      lowerMessage.includes('чим займаєтесь')
-    ) {
-      return 'Ми надаємо три основні види послуг:\n\n1. Індивідуальні психологічні консультації\n2. Групові тренінги та семінари\n3. Корпоративні програми для команд\n\nДетальніше можна дізнатись на сторінці "Послуги".';
-    }
-
-    if (
-      lowerMessage.includes('ціна') ||
-      lowerMessage.includes('вартість') ||
-      lowerMessage.includes('коштує')
-    ) {
-      return 'Наші ціни:\n\n• Індивідуальна консультація - від 500 грн\n• Групові тренінги - від 800 грн\n• Корпоративні програми - за домовленістю\n\nПерегляньте детальніше на сторінці "Ціни".';
-    }
-
-    if (
-      lowerMessage.includes('запис') ||
-      lowerMessage.includes('як записат') ||
-      lowerMessage.includes('консультац')
-    ) {
-      return 'Записатись на консультацію можна:\n\n• Через форму на сторінці "Контакти"\n• За телефоном: +380 (98) 123 45 67\n• Email: levelup@gmail.com\n\nНаша команда зв\'яжеться з вами найближчим часом!';
-    }
-
-    if (
-      lowerMessage.includes('графік') ||
-      lowerMessage.includes('режим') ||
-      lowerMessage.includes('коли працює')
-    ) {
-      return 'Наш графік роботи:\n\n• Пн-Пт: 9:00 - 20:00\n• Субота: 10:00 - 18:00\n• Неділя: вихідний\n\nМи працюємо онлайн та офлайн!';
-    }
-
-    if (
-      lowerMessage.includes('де ви') ||
-      lowerMessage.includes('адреса') ||
-      lowerMessage.includes('знаходитесь')
-    ) {
-      return 'Наша адреса: Львів, вул. Володимира Великого, 15\n\nМи знаходимось в центрі міста. Також проводимо онлайн консультації!';
-    }
-
-    if (
-      lowerMessage.includes('команда') ||
-      lowerMessage.includes('психолог') ||
-      lowerMessage.includes('хто працює')
-    ) {
-      return 'Наш головний фахівець - Тетяна Колодчак, практикуючий психолог з 15+ років досвіду.\n\nВона спеціалізується на:\n• Сімейній психології\n• Консультуванні дорослих та дітей\n• Кризових станах та особистісному зростанні\n\nДізнайтесь більше на сторінці "Про нас".';
-    }
-
-    if (
-      lowerMessage.includes('дяку') ||
-      lowerMessage.includes('спасибі') ||
-      lowerMessage.includes('дякую')
-    ) {
-      return 'Завжди радий допомогти! Якщо у вас є ще питання - звертайтесь! 😊';
-    }
-
-    if (lowerMessage.includes('привіт') || lowerMessage.includes('вітаю')) {
-      return 'Вітаю! Чим можу вам допомогти сьогодні?';
-    }
-
-    return 'Дякую за ваше запитання! Я можу розповісти вам про наші послуги, ціни, графік роботи та допомогти записатись на консультацію.\n\nАбо виберіть одну з швидких відповідей нижче 👇';
-  };
-
-  const handleSendMessage = () => {
-    if (!inputValue.trim()) return;
-
-    const userMessage: Message = {
-      id: messages.length + 1,
-      text: inputValue,
-      isBot: false,
-      timestamp: new Date(),
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
+    const userMessage = { id: Date.now(), text: messageText, isBot: false };
+    setMessages(prev => [...prev, userMessage]);
     setInputValue('');
+    setIsLoading(true);
+    setSuggestedQuestions([]);
 
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: messages.length + 2,
-        text: getBotResponse(inputValue),
-        isBot: true,
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botResponse]);
-    }, 800);
+    const history = messages.map(m => ({
+      role: m.isBot ? 'assistant' : 'user',
+      content: m.text
+    }));
+
+    try {
+      const res = await fetch(import.meta.env.VITE_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageText, history })
+      });
+      if (!res.ok) throw new Error('Server error');
+      const data = await res.json();
+      setMessages(prev => [...prev, { id: Date.now() + 1, text: data.reply, isBot: true }]);
+      if (data.suggested_questions?.length) setSuggestedQuestions(data.suggested_questions);
+    } catch {
+      setMessages(prev => [...prev, {
+        id: Date.now() + 1,
+        text: 'Сталася помилка. Спробуйте пізніше або зверніться до нас напряму.',
+        isBot: true
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleQuickReply = (reply: string) => {
@@ -224,6 +172,26 @@ export function AIChatBot() {
               </div>
             )}
 
+            {suggestedQuestions.length > 0 && (
+              <div className="flex flex-wrap gap-2 px-4 py-2">
+                {suggestedQuestions.map((q, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleSendMessage(q)}
+                    className="text-xs px-3 py-1 rounded-full border border-current opacity-70 hover:opacity-100 transition-opacity"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {isLoading && (
+              <div className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400">
+                <span className="animate-pulse">...</span>
+              </div>
+            )}
+
             {/* Input */}
             <div className="p-4 border-t border-border bg-white">
               <div className="flex gap-2">
@@ -236,7 +204,7 @@ export function AIChatBot() {
                   className="flex-1 px-4 py-2.5 rounded-xl bg-muted/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                 />
                 <button
-                  onClick={handleSendMessage}
+                  onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim()}
                   className="px-4 py-2.5 rounded-xl bg-gradient-to-br from-primary to-secondary text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all"
                 >
