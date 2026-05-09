@@ -5,9 +5,11 @@ from config import Config
 from database import db
 from controllers.reviews_controller.reviews_controller import reviews_bp
 from controllers.services_controller.services_controller import service_bp
+from ai_routes import assistant_bp  # ДОДАНО: імпорт твого ШІ-маршруту
 from ma import ma
 
 migrate = Migrate()
+
 
 def create_app():
     app = Flask(__name__)
@@ -17,8 +19,12 @@ def create_app():
     ma.init_app(app)
     migrate.init_app(app, db)
 
+    # Реєстрація існуючих маршрутів
     app.register_blueprint(reviews_bp, url_prefix='/api/v1/reviews')
     app.register_blueprint(service_bp, url_prefix='/api/v1/services')
+
+    # ДОДАНО: Реєстрація маршруту для AI Assistant
+    app.register_blueprint(assistant_bp, url_prefix='/api/v1')
 
     return app
 
