@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Star, Send, Heart, MessageSquare } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -7,6 +7,9 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 
 export default function ReviewsForm() {
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +19,20 @@ export default function ReviewsForm() {
   });
   const [hoveredRating, setHoveredRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    fetch(import.meta.env.VITE_REVIEWS_URL)
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then(data => {
+        const published = data.filter((r: any) => r.is_published === true);
+        setReviews(published);
+      })
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, []);
 
   const services = [
     'Індивідуальна консультація',
@@ -27,23 +44,36 @@ export default function ReviewsForm() {
     'Коучинг',
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Тут буде логіка відправки форми
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    
-    // Скидаємо форму через 3 секунди
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        service: '',
-        rating: 0,
-        message: '',
+    try {
+      const res = await fetch(import.meta.env.VITE_REVIEWS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_name: formData.name,
+          user_email: formData.email,
+          service_id: null,
+          rating: formData.rating,
+          comment: formData.message,
+          is_published: false
+        })
       });
-    }, 3000);
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          service: '',
+          rating: 0,
+          message: '',
+        });
+      }, 3000);
+    } catch {
+      alert('Не вдалося відправити відгук. Спробуйте пізніше.');
+    }
   };
 
   const handleRatingClick = (rating: number) => {
@@ -364,27 +394,13 @@ export default function ReviewsForm() {
           </motion.div>
 
           {/* Display existing testimonials */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: 'Олена М.',
-                role: 'Клієнт центру',
-                text: 'Звернулася до LEVEL UP в складний період мого життя. Психолог допоміг мені зрозуміти себе, пропрацювати внутрішні конфлікти та знайти сили рухатися далі. Дуже вдячна за професійну підтримку!',
-                rating: 5,
-              },
-              {
-                name: 'Андрій К.',
-                role: 'Учасник тренінгу',
-                text: 'Проходив груповий тренінг з управління стресом. Отримав не тільки корисні техніки, а й підтримку від інших учасників. Атмосфера довіри та розуміння дозволила відкритися та працювати над собою.',
-                rating: 5,
-              },
-              {
-                name: 'Марія В.',
-                role: 'HR-менеджер',
-                text: 'Замовляли корпоративну програму для нашої команди. Результат перевершив очікування - покращилася комунікація, зменшилася кількість конфліктів. Команда LEVEL UP - справжні професіонали!',
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
+          {loading ? (
+            <div className="text-center py-8">Завантаження відгуків...</div>
+          ) : error ? (
+            <div className="text-center py-8">Не вдалося завантажити відгуки</div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+              {reviews.map((testimonial: any, index: number) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -403,25 +419,26 @@ export default function ReviewsForm() {
                 </div>
 
                 <p className="text-foreground/80 mb-6 leading-relaxed">
-                  "{testimonial.text}"
+                  "{testimonial.comment}"
                 </p>
 
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                    {testimonial.name.charAt(0)}
+                    {testimonial.user_name.charAt(0)}
                   </div>
                   <div>
                     <div className="font-bold text-foreground">
-                      {testimonial.name}
+                      {testimonial.user_name}
                     </div>
                     <div className="text-sm text-foreground/60">
-                      {testimonial.role}
+                      Клієнт
                     </div>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
     </div>

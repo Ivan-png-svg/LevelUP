@@ -16,7 +16,7 @@ import {
 export default function CVForm() {
   const cvData = {
     personalInfo: {
-      name: "Тетяна Колодчак",
+      name: "Ольга Колодчак",
       title: "Психолог, засновниця центру LEVEL UP",
       email: "info@levelup.com.ua",
       phone: "+380 XX XXX XX XX",
@@ -131,7 +131,7 @@ export default function CVForm() {
                   <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl mb-6 ring-4 ring-primary/20">
                     <img
                       src="https://staff.lpnu.ua/sites/default/files/staff/73755.jpg"
-                      alt="Тетяна Колодчак"
+                      alt="Ольга Колодчак"
                       className="w-full h-full object-cover object-[center_5%]"
                     />
                   </div>

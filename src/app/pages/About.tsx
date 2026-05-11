@@ -221,13 +221,13 @@ export default function About() {
                     <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl mb-6 ring-4 ring-primary/20">
                       <img
                         src="https://staff.lpnu.ua/sites/default/files/staff/73755.jpg"
-                        alt="Тетяна Колодчак"
+                        alt="Ольга Колодчак"
                         className="w-full h-full object-cover object-[center_5%]"
                       />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold text-foreground">
-                        Тетяна Колодчак
+                        Ольга Колодчак
                       </h3>
                       <p className="text-primary font-medium">
                         Психолог, засновниця центру
