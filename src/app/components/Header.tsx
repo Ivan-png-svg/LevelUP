@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,21 +11,21 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   const menuItems = [
-    { label: 'Головна', path: '/' },
-    { label: 'Про нас', path: '/about' },
+    { label: "Головна", path: "/" },
+    { label: "Про нас", path: "/about" },
     {
-      label: 'Послуги',
-      path: '/services',
+      label: "Послуги",
+      path: "/services",
       submenu: [
-        { label: 'Всі послуги', path: '/services' },
-        { label: 'Індивідуальні консультації', path: '/services/individual' },
-        { label: 'Групові тренінги', path: '/services/group' },
-        { label: 'Корпоративні програми', path: '/services/corporate' },
+        { label: "Всі послуги", path: "/services" },
+        { label: "Індивідуальні консультації", path: "/services/individual" },
+        { label: "Групові тренінги", path: "/services/group" },
+        { label: "Корпоративні програми", path: "/services/corporate" },
       ],
     },
-    { label: 'Тести', path: '/tests' },
-    { label: 'Ціни', path: '/pricing' },
-    { label: 'Відгуки', path: '/reviews' },
+    { label: "Тести", path: "/tests" },
+    { label: "Ціни", path: "/pricing" },
+    { label: "Відгуки", path: "/reviews" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export function Header() {
             <div className="hidden sm:block">
               <div className="font-bold text-xl text-foreground">LEVEL UP</div>
               <div className="text-xs text-muted-foreground">
-                Тренінгово-консультаційний центр
+                Консультаційно- тренінговий центр
               </div>
             </div>
           </Link>
@@ -54,9 +54,10 @@ export function Header() {
                     <Link
                       to={item.path}
                       className={`px-4 py-2 rounded-lg flex items-center gap-1 transition-colors ${
-                        isActive(item.path) || location.pathname.startsWith('/services')
-                          ? 'text-primary bg-primary/5'
-                          : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
+                        isActive(item.path) ||
+                        location.pathname.startsWith("/services")
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                       }`}
                     >
                       {item.label}
@@ -69,8 +70,8 @@ export function Header() {
                           to={subItem.path}
                           className={`block px-4 py-3 transition-colors first:rounded-t-xl last:rounded-b-xl ${
                             isActive(subItem.path)
-                              ? 'text-primary bg-primary/5'
-                              : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
+                              ? "text-primary bg-primary/5"
+                              : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                           }`}
                         >
                           {subItem.label}
@@ -83,8 +84,8 @@ export function Header() {
                     to={item.path}
                     className={`px-4 py-2 rounded-lg transition-colors ${
                       isActive(item.path)
-                        ? 'text-primary bg-primary/5'
-                        : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
+                        ? "text-primary bg-primary/5"
+                        : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                     }`}
                   >
                     {item.label}
@@ -114,7 +115,7 @@ export function Header() {
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden border-t border-border"
             >
@@ -130,7 +131,7 @@ export function Header() {
                           {item.label}
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${
-                              isServicesOpen ? 'rotate-180' : ''
+                              isServicesOpen ? "rotate-180" : ""
                             }`}
                           />
                         </button>
@@ -143,8 +144,8 @@ export function Header() {
                                 onClick={() => setIsMenuOpen(false)}
                                 className={`block px-4 py-2 text-sm transition-colors ${
                                   isActive(subItem.path)
-                                    ? 'text-primary'
-                                    : 'text-foreground/70 hover:text-primary'
+                                    ? "text-primary"
+                                    : "text-foreground/70 hover:text-primary"
                                 }`}
                               >
                                 {subItem.label}
@@ -159,8 +160,8 @@ export function Header() {
                         onClick={() => setIsMenuOpen(false)}
                         className={`block px-4 py-2 transition-colors ${
                           isActive(item.path)
-                            ? 'text-primary'
-                            : 'text-foreground/80 hover:text-primary'
+                            ? "text-primary"
+                            : "text-foreground/80 hover:text-primary"
                         }`}
                       >
                         {item.label}

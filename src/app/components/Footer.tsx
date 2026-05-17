@@ -15,7 +15,7 @@ export function Footer() {
               <div>
                 <div className="font-bold text-lg">LEVEL UP</div>
                 <div className="text-xs text-white/60">
-                  Консультаційний центр
+                  Консультаційно-тренінговий центр
                 </div>
               </div>
             </div>
@@ -129,24 +129,24 @@ export function Footer() {
               <li className="flex items-center gap-2 text-white/70">
                 <Phone className="w-4 h-4 text-primary" />
                 <a
-                  href="tel:+380981234567"
+                  href="tel:+380679625843"
                   className="hover:text-white transition-colors"
                 >
-                  +380 (98) 123 45 67
+                  +380 (67) 962 5843
                 </a>
               </li>
               <li className="flex items-center gap-2 text-white/70">
                 <Mail className="w-4 h-4 text-secondary" />
                 <a
-                  href="mailto:levelup@gmail.com"
+                  href="mailto:ctc.level.up.lviv@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  levelup@gmail.com
+                  ctc.level.up.lviv@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/70">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                <span>Львів, вул. Володимира Великого, 15</span>
+                <span>Львів, вул. В'ячеслава Чорновола, 63</span>
               </li>
             </ul>
           </div>

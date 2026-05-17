@@ -1,43 +1,43 @@
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
+import { motion } from "motion/react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    alert('Дякуємо за вашу заявку! Ми зв\'яжемося з вами найближчим часом.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    alert("Дякуємо за вашу заявку! Ми зв'яжемося з вами найближчим часом.");
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      label: 'Телефон',
-      value: '+380 (98) 123 45 67',
-      href: 'tel:+380981234567',
-      gradient: 'from-primary to-cyan-400',
+      label: "Телефон",
+      value: "+380 (98) 123 45 67",
+      href: "tel:+380981234567",
+      gradient: "from-primary to-cyan-400",
     },
     {
       icon: Mail,
-      label: 'Email',
-      value: 'levelup@gmail.com',
-      href: 'mailto:levelup@gmail.com',
-      gradient: 'from-primary to-cyan-400',
+      label: "Email",
+      value: "levelup@gmail.com",
+      href: "mailto:levelup@gmail.com",
+      gradient: "from-primary to-cyan-400",
     },
     {
       icon: MapPin,
-      label: 'Адреса',
-      value: 'Львів, вул. Володимира Великого, 15',
-      href: '#',
-      gradient: 'from-primary to-cyan-400',
+      label: "Адреса",
+      value: "Львів, вул. Володимира Великого, 15",
+      href: "#",
+      gradient: "from-primary to-cyan-400",
     },
   ];
 

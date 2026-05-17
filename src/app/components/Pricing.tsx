@@ -1,112 +1,112 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router';
-import { Check, Star, AlertCircle } from 'lucide-react';
-import imgCancellationPolicy from 'figma:asset/fc5b02982aa81baff38c67727806fd93b735261f.png';
+import { motion } from "motion/react";
+import { Link } from "react-router";
+import { Check, Star, AlertCircle } from "lucide-react";
+// import imgCancellationPolicy from "figma:asset/fc5b02982aa81baff38c67727806fd93b735261f.png";
 
 export function Pricing() {
   const plans = [
     {
-      title: 'Індивідуальна сесія',
-      price: '2000',
-      description: 'Персональна психологічна підтримка',
+      title: "Індивідуальна сесія",
+      price: "від 2500",
+      description: "Персональна психологічна підтримка",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Індивідуальний підхід',
-        'Конфіденційність',
-        'Гнучкий графік',
+        "Тривалість: 45-50 хвилин",
+        "Індивідуальний підхід",
+        "Конфіденційність",
+        "Гнучкий графік",
       ],
-      gradient: 'from-primary to-cyan-400',
+      gradient: "from-primary to-cyan-400",
       popular: true,
     },
     {
-      title: 'Дитячий психолог',
-      price: '2000',
-      description: 'Консультації для дітей та підлітків',
+      title: "Дитячий психолог",
+      price: "від 2500",
+      description: "Консультації для дітей та підлітків",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Адаптовані методи роботи',
-        'Комфортна атмосфера',
-        'Співпраця з батьками',
+        "Тривалість: 45-50 хвилин",
+        "Адаптовані методи роботи",
+        "Комфортна атмосфера",
+        "Співпраця з батьками",
       ],
-      gradient: 'from-secondary to-emerald-400',
+      gradient: "from-secondary to-emerald-400",
       popular: false,
     },
     {
-      title: 'Сімейна пара/сім\'я',
-      price: '3500',
-      description: 'Консультації для подружжя та сімей',
+      title: "Сімейна пара/сім'я",
+      price: "від 3500",
+      description: "Консультації для подружжя та сімей",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Робота з відносинами',
-        'Сімейна терапія',
-        'Вирішення конфліктів',
+        "Тривалість: 45-50 хвилин",
+        "Робота з відносинами",
+        "Сімейна терапія",
+        "Вирішення конфліктів",
       ],
-      gradient: 'from-accent to-yellow-400',
+      gradient: "from-accent to-yellow-400",
       popular: false,
     },
     {
-      title: 'Онлайн консультація',
-      price: '2000',
-      description: 'Психологічна підтримка онлайн',
+      title: "Онлайн консультація",
+      price: "від 2000",
+      description: "Психологічна підтримка онлайн",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Зручний формат',
-        'Будь-яка локація',
-        'Безпечне підключення',
+        "Тривалість: 45-50 хвилин",
+        "Зручний формат",
+        "Будь-яка локація",
+        "Безпечне підключення",
       ],
-      gradient: 'from-primary to-cyan-400',
+      gradient: "from-primary to-cyan-400",
       popular: false,
     },
     {
-      title: 'Коучинг',
-      price: '3000',
-      description: 'Професійний коучинг для розвитку',
+      title: "Коучинг",
+      price: "від 3000",
+      description: "Професійний коучинг для розвитку",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Досягнення цілей',
-        'Особистісний розвиток',
-        'Планування змін',
+        "Тривалість: 45-50 хвилин",
+        "Досягнення цілей",
+        "Особистісний розвиток",
+        "Планування змін",
       ],
-      gradient: 'from-secondary to-emerald-400',
+      gradient: "from-secondary to-emerald-400",
       popular: false,
     },
     {
-      title: 'Групова консультація',
-      price: '800',
-      description: 'Інтерактивні групові заняття',
+      title: "Групова консультація",
+      price: "від 800",
+      description: "Інтерактивні групові заняття",
       features: [
-        'Тривалість: 2-3 години',
-        'Невелика група (до 12 осіб)',
-        'Інтерактивні вправи',
-        'Практичні навички',
+        "Тривалість: 2-3 години",
+        "Невелика група (до 12 осіб)",
+        "Інтерактивні вправи",
+        "Практичні навички",
       ],
-      gradient: 'from-accent to-yellow-400',
+      gradient: "from-accent to-yellow-400",
       popular: false,
     },
     {
-      title: 'Соціальна робота',
-      price: '600',
-      description: 'Соціально-психологічна підтримка',
+      title: "Соціальна робота",
+      price: "від 600",
+      description: "Соціально-психологічна підтримка",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Соціальна підтримка',
-        'Доступні послуги',
-        'Спеціалізована допомога',
+        "Тривалість: 45-50 хвилин",
+        "Соціальна підтримка",
+        "Доступні послуги",
+        "Спеціалізована допомога",
       ],
-      gradient: 'from-primary to-cyan-400',
+      gradient: "from-primary to-cyan-400",
       popular: false,
     },
     {
-      title: 'Консультація керівника центру',
-      price: '5000',
-      description: 'Професійна консультація експерта',
+      title: "Консультація керівника центру",
+      price: "від 5500",
+      description: "Професійна консультація експерта",
       features: [
-        'Тривалість: 45-50 хвилин',
-        'Найвищий рівень експертизи',
-        'Складні кейси',
-        'Індивідуальний підхід',
+        "Тривалість: 45-50 хвилин",
+        "Найвищий рівень експертизи",
+        "Складні кейси",
+        "Індивідуальний підхід",
       ],
-      gradient: 'from-secondary to-emerald-400',
+      gradient: "from-secondary to-emerald-400",
       popular: false,
     },
   ];
@@ -143,19 +143,28 @@ export function Pricing() {
                 <AlertCircle className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-foreground mb-4">Зверніть увагу:</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Зверніть увагу:
+                </h3>
                 <div className="space-y-3 text-foreground/80 leading-relaxed">
                   <p>
-                    У випадку відміни консультації клієнтом менш ніж за 24 години призначеного часу сесії, консультація оплачується клієнтом повністю.
+                    У випадку відміни консультації клієнтом менш ніж за 24
+                    години призначеного часу сесії, консультація оплачується
+                    клієнтом повністю.
                   </p>
                   <p>
-                    Якщо психолог відміняє сесію менш ніж за 24 години до початку — він зобов'язується провести наступну консультацію за власний рахунок.
+                    Якщо психолог відміняє сесію менш ніж за 24 години до
+                    початку — він зобов'язується провести наступну консультацію
+                    за власний рахунок.
                   </p>
                   <p className="text-sm text-foreground/60 italic">
-                    (Винятком є форс-мажорні обставини: різке погіршення стану здоров'я в день консультації, аварія, стихійне лихо).
+                    (Винятком є форс-мажорні обставини: різке погіршення стану
+                    здоров'я в день консультації, аварія, стихійне лихо).
                   </p>
                   <p className="mt-4 pt-4 border-t border-border">
-                    Для того, щоб підтвердити запис на консультацію необхідно здійснити повну передоплату (за 24 год. до часу консультації).
+                    Для того, щоб підтвердити запис на консультацію необхідно
+                    здійснити повну передоплату (за 24 год. до часу
+                    консультації).
                   </p>
                 </div>
               </div>
@@ -173,7 +182,7 @@ export function Pricing() {
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8 }}
               className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
-                plan.popular ? 'border-primary' : 'border-border'
+                plan.popular ? "border-primary" : "border-border"
               } overflow-hidden flex flex-col`}
             >
               {plan.popular && (
@@ -194,7 +203,7 @@ export function Pricing() {
 
               <div className="mb-6">
                 <div className="flex items-baseline gap-2">
-                  {plan.price === 'За домовленістю' ? (
+                  {plan.price === "За домовленістю" ? (
                     <span className="text-2xl font-bold text-foreground">
                       {plan.price}
                     </span>
@@ -218,7 +227,9 @@ export function Pricing() {
                     >
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-foreground/80 text-sm">{feature}</span>
+                    <span className="text-foreground/80 text-sm">
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -228,7 +239,7 @@ export function Pricing() {
                 className={`block w-full px-6 py-3 rounded-xl text-center font-medium transition-all ${
                   plan.popular
                     ? `bg-gradient-to-br ${plan.gradient} text-white shadow-lg hover:shadow-xl`
-                    : 'border-2 border-primary text-primary hover:bg-primary/5'
+                    : "border-2 border-primary text-primary hover:bg-primary/5"
                 }`}
               >
                 Записатись

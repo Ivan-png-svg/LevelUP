@@ -199,7 +199,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4">
-              Наш фахівець
+              Керівник центру
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Досвідчений психолог, який допомагає вам на шляху до особистісного
@@ -220,7 +220,7 @@ export default function About() {
                   <div className="text-center">
                     <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl mb-6 ring-4 ring-primary/20">
                       <img
-                        src="https://staff.lpnu.ua/sites/default/files/staff/73755.jpg"
+                        src="/src/app/components/figma/Olga Kolodchak.jpg"
                         alt="Ольга Колодчак"
                         className="w-full h-full object-cover object-[center_5%]"
                       />
@@ -230,7 +230,7 @@ export default function About() {
                         Ольга Колодчак
                       </h3>
                       <p className="text-primary font-medium">
-                        Психолог, засновниця центру
+                        Психолог, засновниця та керівник центру LEVEL UP
                       </p>
                       <p className="text-sm text-foreground/60">
                         15+ років досвіду
